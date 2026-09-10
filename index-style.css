@@ -7,12 +7,12 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
+    background-color: whitesmoke;
     color: #2b2b2b;
     line-height: 1.6;
 }
 
-header {
+header{
     background-color: #2a52be;
     color: #ffffff;
     padding: 40px 20px;
