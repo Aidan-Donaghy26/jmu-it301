@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flex_parent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.child1 {
+    height: 100px;
+    width: 100px;
+}
+
+.child2 {
+    height: 150px;
+    width: 150px;
+}
+
+.child3 {
+    height: 100px;
+    width: 100px;
+}
+</style>
+</head>
+<body>
+    <div class="flex_parent">
+        <img class="child1" src="https://picsum.photos/100/100?random=1" alt="pic1">
+        <img class="child2" src="https://picsum.photos/150/150?random=2" alt="pic2">
+        <img class="child3" src="https://picsum.photos/100/100?random=3" alt="pic3">
+    </div>
+</body>
+</html>
