@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masonry Lab 7</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+
+.emoji-panel {
+    flex: 0 0 85px; 
+    height: 100vh;
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 10px;
+}
+
+.emoji-panel span {
+    font-size: 2em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+.emoji-panel .trash {
+    margin-top: auto;
+}
+
+.masonry-panel {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+}
+.masonry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 2px;
+}
+
+.masonry img {
+    flex-grow: 1; 
+    height: 100px;
+    object-fit: cover; 
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <nav class="emoji-panel">
+        <span title="Photos">&#x1F4F7;</span>
+        <span title="Gallery">&#x1F5C4;&#xfe0f;</span>
+        <span title="Favorites">&#x2764;&#xfe0f;</span>
+        <span class="trash" title="Trash">&#x1F5D1;&#xfe0f;</span>
+    </nav>
+
+    <main class="masonry-panel">
+        <div class="masonry">
+            <img src="https://picsum.photos/157/100?random=1" alt="Photo 1">
+            <img src="https://picsum.photos/112/100?random=2" alt="Photo 2">
+            <img src="https://picsum.photos/240/100?random=3" alt="Photo 3">
+            <img src="https://picsum.photos/225/100?random=4" alt="Photo 4">
+            <img src="https://picsum.photos/214/100?random=5" alt="Photo 5">
+            <img src="https://picsum.photos/171/100?random=6" alt="Photo 6">
+            <img src="https://picsum.photos/153/100?random=7" alt="Photo 7">
+            <img src="https://picsum.photos/371/100?random=8" alt="Photo 8">
+            <img src="https://picsum.photos/143/100?random=9" alt="Photo 9">
+            <img src="https://picsum.photos/313/100?random=10" alt="Photo 10">
+            <img src="https://picsum.photos/116/100?random=11" alt="Photo 11">
+            <img src="https://picsum.photos/115/100?random=12" alt="Photo 12">
+            <img src="https://picsum.photos/147/100?random=13" alt="Photo 13">
+            <img src="https://picsum.photos/201/100?random=14" alt="Photo 14">
+            <img src="https://picsum.photos/219/100?random=15" alt="Photo 15">
+            <img src="https://picsum.photos/353/100?random=16" alt="Photo 16">
+            <img src="https://picsum.photos/113/100?random=17" alt="Photo 17">
+            <img src="https://picsum.photos/387/100?random=18" alt="Photo 18">
+            <img src="https://picsum.photos/201/100?random=19" alt="Photo 19">
+            <img src="https://picsum.photos/303/100?random=20" alt="Photo 20">
+            <img src="https://picsum.photos/303/100?random=21" alt="Photo 21">
+            <img src="https://picsum.photos/303/100?random=22" alt="Photo 22">
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>
