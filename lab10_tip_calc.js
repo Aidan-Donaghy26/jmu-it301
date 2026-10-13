@@ -8,7 +8,7 @@ do {
     input = prompt(message);
     price = Number(input);
 
-    if (price === 0 || price === null) {
+    if (price == 0 || price == null) {
             document.write(`Please enter a valid amount`);
         } else if (price < 0) {
             document.write(`Please enter a valid amount greater than zero`)
