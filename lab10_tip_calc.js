@@ -9,11 +9,11 @@ do {
     price = Number(input);
 
     if (price == 0 || price == null) {
-            document.write(`Please enter a bill amount greater than zero`);
+            document.write(`Please enter a bill amount greater than zero.\n`);
         } else if (price < 0) {
-            document.write(`Negative amounts are not allowed. Please enter a valid bill amount.`)
+            document.write(`Negative amounts are not allowed. Please enter a valid bill amount.\n`)
         } else if (isNaN(price)){
-            document.write(`Invalid input. Please enter a numeric bill amount.`);
+            document.write(`Invalid input. Please enter a numeric bill amount.\n`);
         } else {
             isValid = true;
         }
