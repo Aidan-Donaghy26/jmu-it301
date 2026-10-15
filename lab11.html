@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Events</title>
+    <style>
+        #myButton {
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            width: 300px;
+            height: 80px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #moveArea {
+            width: 75vh;
+            height: 150px;
+            margin-top: 20px;
+            border: 2px dashed gray;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="myButton">Click Me! 😊</button>
+
+    <div id="moveArea">Move your mouse here</div>
+
+    <script>
+        const myButton = document.getElementById('myButton');
+        const moveArea = document.getElementById('moveArea');
+
+        function doNotClick(event) {
+            event.target.textContent = 'Do not click! 😠';
+            event.target.style.backgroundColor = 'yellow';
+            event.target.style.color = 'black';
+        }
+
+        function ouch(event) {
+            event.target.textContent = 'Ouch! 🤕';
+            event.target.style.backgroundColor = 'red';
+            event.target.style.color = 'white';
+        }
+
+        function phew(event) {
+            event.target.textContent = 'Phew! 😌';
+            event.target.style.backgroundColor = 'lightgreen';
+            event.target.style.color = 'black';
+        }
+
+        function doubleTrouble(event) {
+            event.target.textContent = 'Double trouble! 🤩';
+            event.target.style.backgroundColor = 'pink';
+            event.target.style.color = 'black';
+        }
+
+        // The div's mousemove changes the BUTTON, so use myButton (not event.target)
+        function iSeeYou() {
+            myButton.textContent = 'I see you! 👀';
+            myButton.style.backgroundColor = 'lightblue';
+            myButton.style.color = 'black';
+        }
+
+        myButton.addEventListener('mouseover', doNotClick);
+        myButton.addEventListener('click', ouch);
+        myButton.addEventListener('mouseout', phew);
+        myButton.addEventListener('dblclick', doubleTrouble);
+        moveArea.addEventListener('mousemove', iSeeYou);
+    </script>
+
+</body>
+</html>
