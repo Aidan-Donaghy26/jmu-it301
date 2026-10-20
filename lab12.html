@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lab 12</title>
-  <link rel="stylesheet" href="">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 12: Greeting and Calculator</title>
 </head>
 <body>
-    <form>
-        <label for="name">What is your name?</label>
-        <input type="text" id="name"><br></br>
-        <button id = "button">Submit</button>
-        <p id = "result"></p><br></br>
 
-        <label for="firstnum">What is the first number in your operation?</label>
-        <input type="number" id="first_num"><br></br>
-        <label for="firstnum">What is the second number in your operation?</label>
-        <input type="number" id="second_num"><br></br>
-        <button id = "nums">Submit</button>
-        <p id = "answer"></p><br></br>
+<form id="calcForm">
+    <label for="name">What is your name?</label>
+    <input type="text" id="name">
+    <button type="button" id="button">Submit</button>
+    <p id="result"></p>
 
-        <p>Select your operation from your two selected numbers:</p>
-        <label><input type="radio" name = "oper" value="add">Addition</label><br></br>
-        <label><input type="radio" name = "oper" value="sub">Subtraction</label><br></br>
-        <label><input type="radio" name = "oper" value="multi">Multiplication</label><br></br>
-        <label><input type="radio" name = "oper" value="divi">Division</label><br></br>
-        <button id = "select">Submit</button>
-        <p id = "result_color"></p><br></br>
-    </form>
+    <label for="first_num">What is the first number in your operation?</label>
+    <input type="number" id="first_num" step="any"><br><br>
+    <label for="second_num">What is the second number in your operation?</label>
+    <input type="number" id="second_num" step="any"><br><br>
+
+    <p>Select your Operation:</p>
+    <label><input type="radio" name="oper" value="add"> Addition</label><br>
+    <label><input type="radio" name="oper" value="sub"> Subtraction</label><br>
+    <label><input type="radio" name="oper" value="multi"> Multiplication</label><br>
+    <label><input type="radio" name="oper" value="divi"> Division</label><br><br>
+
+    <button type="button" id="select">Calculate</button>
+    <button type="button" id="clear">Clear</button>
+    <p id="answer"></p>
+</form>
 
 <script>
-    const result = document.getElementById('result');
-    document.getElementById("button").addEventListener("click", function(){
-
-        result.textContent = "Hello  " + (name.value) + ", Welcome to my website!";
-    
-    });
-    
-    document.getElementById("select").addEventListener("click", function(){
-        const oper = document.querySelector([name = oper].checked);
-        const sub = (first_num, second_num) => a - b;
-    });
+const nameInput = document.getElementById('name');
+const result = document.getElementById('result');
+const firstInput = document.getElementById('first_num');
+const secondInput = document.getElementById('second_num');
+const answer = document.getElementById('answer');
 
 
+document.getElementById('button').addEventListener('click', function () {
+    const userName = nameInput.value.trim();
+    result.textContent = 'Hi ' + (userName) + ', Welcome to my website!!';
+});
 
+
+document.getElementById('select').addEventListener('click', function () {
+    const oper = document.querySelector('input[name="oper"]:checked');
+
+    if (firstInput.value === '' || secondInput.value === '') {
+        answer.textContent = 'Please enter valid numbers';
+        return;
+    }
+    if (oper === null) {
+        answer.textContent = 'Select an operation';
+        return;
+    }
+
+    const a = Number(firstInput.value);
+    const b = Number(secondInput.value);
+    let value;
+
+    if (oper.value === 'add') {
+        value = a + b;
+    } else if (oper.value === 'sub') {
+        value = a - b;
+    } else if (oper.value === 'multi') {
+        value = a * b;
+    } else {
+        if (b === 0) {
+            answer.textContent = 'You cannot divide by zero.';
+            return;
+        }
+        value = a / b;
+    }
+
+    answer.textContent = 'The result is: ' + value;
+});
+
+
+document.getElementById('clear').addEventListener('click', function () {
+    document.getElementById('calcForm').reset();
+    result.textContent = '';
+    answer.textContent = '';
+});
 </script>
 
 </body>
