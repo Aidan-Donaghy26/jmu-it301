@@ -30,7 +30,7 @@
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password" placeholder="Create a password" required>
 
-        <!-- Password rules: hidden at first, shown when the user starts typing -->
+        <!-- Password rules: hidden at first-->
         <ul id="rules" hidden>
             <li id="ruleLength" class="invalid">At least 6 characters</li>
             <li id="ruleSpecial" class="invalid">Must include a special character (!@#$...)</li>
@@ -48,7 +48,7 @@
         const ruleSpecial = document.getElementById('ruleSpecial');
         const ruleUpper = document.getElementById('ruleUpper');
 
-        // Step 2A: submit event (runs only after the browser's required/email checks pass)
+        // Step 2A: submit event
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             window.location.href = "success.html";
